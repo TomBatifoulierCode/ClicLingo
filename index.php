@@ -23,6 +23,7 @@
         </section>
     </main>
     <script src="script.js"></script>
+    <script src="anti_afk/anti_afk.js"></script>
 </body>
 </html>
 
