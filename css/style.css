@@ -4,6 +4,7 @@
     padding: 0;
 }
 
+
 body, html {
     height: 100%;
     margin: 0;
@@ -46,9 +47,12 @@ section {
     order: 3; /* Dernière colonne */
 }
 
+h2::selection { background:rgba(38,119,201,0); }
+
 section h2 {
     text-align: center;
     margin-bottom: 20px;
+    
 }
 
 .transparent-rectangle {

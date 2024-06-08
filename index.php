@@ -1,3 +1,20 @@
+<?php
+    if (!isset($_COOKIE["user_admin"])) {
+        header("Location: ./user/inscription.php");
+        exit;
+    } else if (isset($_COOKIE["user_admin"])) {
+        
+    } else if (!isset($_COOKIE['user_id'])) {
+        header("Location: ./user/inscription.php");
+        exit;
+    } else if (!isset($_COOKIE['user_eleves'])) {
+        header("Location: ./user/inscription.php");
+        exit;
+    } else {
+
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -15,7 +32,8 @@
         <section class="clicker">
             <img src="./img/cl-logo-v1-removebg-preview.png" alt="Logo">
             <h2>Clicker</h2>
-            <div id="test" class="transparent-rectangle">
+            <h3>Votre nombre de Click lingot: </h3>
+            <div class="transparent-rectangle">
                 <img id="myImage" src="./img/cl_ingot_clicker.png" alt="Image à cliquer" width="200">
 
             </div>
@@ -27,7 +45,7 @@
     </main>
     <script src="script.js"></script>
     <script src="anti_afk/anti_afk.js"></script>
-    <script>console.log("1.3");</script>
+    <script>console.log("v1.5");</script>
 </body>
 </html>
 
