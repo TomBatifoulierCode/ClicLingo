@@ -15,9 +15,8 @@
         <section class="clicker">
             <img src="./img/cl-logo-v1-removebg-preview.png" alt="Logo">
             <h2>Clicker</h2>
-            <div class="transparent-rectangle">
+            <div id="test" class="transparent-rectangle">
                 <img id="myImage" src="./img/cl_ingot_clicker.png" alt="Image à cliquer" width="200">
-
 
             </div>
         </section>
@@ -28,6 +27,7 @@
     </main>
     <script src="script.js"></script>
     <script src="anti_afk/anti_afk.js"></script>
+    <script>console.log("1.3");</script>
 </body>
 </html>
 

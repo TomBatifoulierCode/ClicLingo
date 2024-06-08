@@ -60,12 +60,21 @@ section h2 {
     margin-top: 20px;
     justify-content: center;
     align-items: center;
+    outline: none; /* Supprime le contour par défaut qui apparaît lors du clic */
+    user-select: none; /* Empêche la sélection de l'image */
+    -webkit-tap-highlight-color: transparent;
+    pointer-events: none;
 }
 
 #myImage {
     max-width: 100%;  /* Assure que l'image ne dépasse pas la largeur du conteneur */
     max-height: 100%; /* Assure que l'image ne dépasse pas la hauteur du conteneur */
+    pointer-events: none;
 }
+
+img::selection { background:rgba(38,119,201,0); }
+
+
 
 @media (max-width: 768px) {
     .container {
