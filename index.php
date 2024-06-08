@@ -15,7 +15,11 @@
         <section class="clicker">
             <img src="./img/cl-logo-v1-removebg-preview.png" alt="Logo">
             <h2>Clicker</h2>
-            <div class="transparent-rectangle"></div>
+            <div class="transparent-rectangle">
+                <img id="myImage" src="./img/cl_ingot_clicker.png" alt="Image à cliquer" width="200">
+
+
+            </div>
         </section>
         <section class="buildings">
             <h2>CONSTRUCTIONS</h2>

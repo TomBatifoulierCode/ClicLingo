@@ -52,11 +52,19 @@ section h2 {
 }
 
 .transparent-rectangle {
+    display: flex;
     width: 80%;
     height: 50%;
     background-color: rgba(255, 255, 255, 0.1);
     border: 2px solid rgba(255, 255, 255, 0.5);
     margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+#myImage {
+    max-width: 100%;  /* Assure que l'image ne dépasse pas la largeur du conteneur */
+    max-height: 100%; /* Assure que l'image ne dépasse pas la hauteur du conteneur */
 }
 
 @media (max-width: 768px) {
