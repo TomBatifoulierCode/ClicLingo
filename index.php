@@ -9,6 +9,71 @@
     } else {
 
     }
+
+    include './database_config.php';
+
+    // Connexion à la base de données
+    $servername = DB_HOST;
+    $username = DB_USER;
+    $password = DB_PASS;
+    $dbname = DB_NAME;
+
+    // Créer la connexion
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    // Vérifier la connexion
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    // Vérifier que les données nécessaires sont présentes
+    if (!isset($_COOKIE['user_eleves'])) {
+        die("User not authenticated.");
+    }
+    
+    if (isset($_COOKIE['user_id'])) {
+        // Récupérer l'identifiant utilisateur à partir du cookie
+        $user_id = $_COOKIE['user_eleves'];
+    
+        // Préparer la requête SQL pour récupérer la colonne 'warn'
+        $sql = "SELECT warn FROM eleves WHERE id = ?";
+        
+        // Préparer et lier
+        if ($stmt = $conn->prepare($sql)) {
+            $stmt->bind_param("i", $user_id);
+            
+            // Exécuter la requête SQL
+            $stmt->execute();
+            
+            // Obtenir le résultat
+            $result = $stmt->get_result();
+            
+            // Stocker le contenu de la colonne 'warn' dans la variable $ban
+            if ($row = $result->fetch_assoc()) {
+                $ban = $row['warn'];
+                if ($ban > 4) {
+                    header("Location: ./bannisement/Ban_perm.php");
+                    exit;
+                } else {
+
+                }
+                //echo "La valeur de warn est : $ban";
+            } else {
+                //echo "Aucun résultat trouvé pour l'utilisateur avec l'ID : $user_id";
+            }
+    
+            // Fermer la déclaration
+            $stmt->close();
+        } else {
+            //echo "Erreur lors de la préparation de la requête : " . $conn->error;
+        }
+    } else {
+        //echo "Le cookie 'user_id' n'est pas défini.";
+    }
+
+    $conn->close();
+
+
 ?>
 
 <!DOCTYPE html>
@@ -40,7 +105,7 @@
     </main>
     <script src="./click_lingot/generate.js"></script>
     <script src="anti_afk/anti_afk.js"></script>
-    <script>console.log("v2.2");</script>
+    <script>console.log("v2.3");</script>
 </body>
 </html>
 
