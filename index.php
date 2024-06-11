@@ -1,10 +1,6 @@
 <?php
-    if (!isset($_COOKIE["user_admin"])) {
-        header("Location: ./user/inscription.php");
-        exit;
-    } else if (isset($_COOKIE["user_admin"])) {
-        
-    } else if (!isset($_COOKIE['user_id'])) {
+
+     if (!isset($_COOKIE['user_id'])) {
         header("Location: ./user/inscription.php");
         exit;
     } else if (!isset($_COOKIE['user_eleves'])) {
@@ -32,10 +28,9 @@
         <section class="clicker">
             <img src="./img/cl-logo-v1-removebg-preview.png" alt="Logo">
             <h2>Clicker</h2>
-            <h3>Votre nombre de Click lingot: </h3>
-            <div class="transparent-rectangle">
+            <h3 id="score"></h3>
+            <div id="clickButton" class="transparent-rectangle">
                 <img id="myImage" src="./img/cl_ingot_clicker.png" alt="Image à cliquer" width="200">
-
             </div>
         </section>
         <section class="buildings">
@@ -43,9 +38,9 @@
             <!-- Ajouter des options de construction ici -->
         </section>
     </main>
-    <script src="script.js"></script>
+    <script src="./click_lingot/generate.js"></script>
     <script src="anti_afk/anti_afk.js"></script>
-    <script>console.log("v1.5");</script>
+    <script>console.log("v2.2");</script>
 </body>
 </html>
 
