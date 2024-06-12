@@ -12,6 +12,8 @@
 
     include './database_config.php';
 
+    include './bannisement/ban.php';
+
     // Connexion à la base de données
     $servername = DB_HOST;
     $username = DB_USER;
@@ -103,6 +105,7 @@
             <!-- Ajouter des options de construction ici -->
         </section>
     </main>
+    <script src="./back/anti-cheat/anti-autoclick.js"></script>
     <script src="./click_lingot/generate.js"></script>
     <script src="anti_afk/anti_afk.js"></script>
     <script>console.log("v2.3");</script>

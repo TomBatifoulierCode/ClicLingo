@@ -1,9 +1,9 @@
 let score_update = './click_lingot/score_user.php';
 let score_update_post = './click_lingot/update_score.php';
 
-console.log("v 3.10");
+console.log("v 3.11");
 
-const clickButton = document.getElementById("myImage");
+const clickButton = document.getElementById("clickButton");
 const scoreDisplay = document.getElementById("score");
 let clickValue = 1;
 let clickMultiplier = 1;
